@@ -17,10 +17,12 @@ def callIbmNlu():
     url='https://gateway.watsonplatform.net/natural-language-understanding/api'
   )
   
+  ## send request to api endpoint
   response = natural_language_understanding.analyze(
     url='www.ibm.com',
     features=Features(keywords=KeywordsOptions(sentiment=True,emotion=True,limit=2))).get_result()
   
+  ##print api response
   print(json.dumps(response, indent=2))
 
 
